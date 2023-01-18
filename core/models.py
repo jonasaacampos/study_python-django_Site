@@ -1,7 +1,24 @@
 from django.db import models
 from stdimage import StdImageField
+import uuid
 
-import core.models
+
+def get_file_path(_instance, _file_name):
+    extension = _file_name.split(".")[-1]
+    file_name = f"{uuid.uuid4()}.{extension}"
+    return file_name
+
+
+ICON_AWESOME = (
+    ("fa-solid fa-feather", "pena"),
+    ("fa-solid fa-bug", "bug"),
+    ("fa-solid fa-fish", "peixe"),
+    ("fa-solid fa-earth-americas", "planeta"),
+    ("fa-solid fa-handshake", "aperto de mãos"),
+    ("fa-solid fa-users", "usuários"),
+    ("fa-solid fa-thumbs-up", "curtir"),
+    ("fa-solid fa-paper-plane", "avião de papel"),
+)
 
 
 class Base(models.Model):
@@ -16,7 +33,7 @@ class Base(models.Model):
 class Servico(Base):
     ICON_CHOICES = (
         ("lni-cog", "engrenagem"),
-        ("lni-stats-up", "grágico"),
+        ("lni-stats-up", "gráfico"),
         ("lni-users", "usuários"),
         ("lni-layers", "design"),
         ("lni-mobile", "mobile"),
@@ -24,7 +41,7 @@ class Servico(Base):
     )
 
     name = models.CharField("Serviço", max_length=100)
-    description = models.CharField("Descrição", max_length=300)
+    description = models.TextField("Descrição", max_length=300)
     icon = models.CharField("Icone", max_length=20, choices=ICON_CHOICES)
 
     class Meta:
@@ -51,10 +68,10 @@ class Equipe(Base):
     cargo = models.ForeignKey(
         "core.Cargo", verbose_name="Cargo", on_delete=models.CASCADE
     )
-    biografia = models.CharField("Biografia", max_length=300)
+    biografia = models.TextField("Biografia", max_length=300)
     imagem_perfil = StdImageField(
         "Imagem",
-        upload_to="equipe",
+        upload_to= get_file_path,
         variations={"thumb": {"width": 480, "height": 480, "crop": True}},
     )
     social_facebook = models.CharField("facebook", max_length=100, default="#")
@@ -68,3 +85,19 @@ class Equipe(Base):
 
     def __str__(self):
         return self.nome
+
+
+class Funcionalidade(Base):
+    name = models.CharField("Nome", max_length=50)
+    description = models.TextField("Descrição", max_length=150)
+    icon = models.CharField("Ícone", max_length=30, choices=ICON_AWESOME)
+
+    class Meta:
+        verbose_name = "Funcionalidade"
+        verbose_name_plural = "Funcionalidades"
+
+    def __str__(self):
+        return self.name
+
+
+

@@ -123,6 +123,17 @@ Para criar as tabelas do banco de dados
 Criar superusuario
 `python manage.py createsuperuser`
 
+
+### Trabalhando com imagens
+
+> ao utilizar o StdImageField, esta biblioteca altera os nomes de arquivos de media para evitar a sobrescrita
+> 
+> Para fazer manualmente a alteração com hashes nos arquivos, podemos usar a biblioteca uuid.uuid 
+> 
+> MAS
+> 
+> é uma boa prática usar os dois métodos em conjunto
+
 ## Referências
 
 - [PostgreSQL download](https://www.enterprisedb.com/downloads/postgres-postgresql-downloads)
