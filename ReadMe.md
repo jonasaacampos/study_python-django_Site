@@ -111,6 +111,17 @@ mkdir static, templates
  
 ```
 
+### Trabalhando com Models
+
+> Ao criar ou alterar uma classe em models, é preciso realizar as migrações
+ 
+`python manage.py makemigrations`
+
+Para criar as tabelas do banco de dados
+`python manage.py migrate`
+
+Criar superusuario
+`python manage.py createsuperuser`
 
 ## Referências
 
