@@ -96,7 +96,20 @@ mkdir static, templates
 
 `python manage.py runserver`
 
+### Preparação do template
 
+```django
+# inserir marcador de arquivos estáticos no cabeçalho do arquivo html
+{% load static %}
+
+# alterar todos os arquivos estávticos (imagens, css, js, etc.)
+{% static 'caminhoDoarquivo/nomeArquivo' %}
+
+# criar arquivo de base e fatiar o template original
+ {% block content %}
+  {% endblock %}
+ 
+```
 
 
 ## Referências
