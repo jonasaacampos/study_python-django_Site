@@ -134,6 +134,44 @@ Criar superusuario
 > 
 > é uma boa prática usar os dois métodos em conjunto
 
+### Testes unitários
+> _Testar é preciso..._
+
+instalar bibliotecas adicionais de teste
+
+```console
+pip install model_mommy coverage
+```
+- Criar na raiz do projeto o arquivo `.coveragerc`
+- Inserir neste arquivo:
+  
+```text
+[run]
+source = .
+
+omit =
+    */__init__.py
+    */settings.py
+    */wsgi.py
+    */apps.py
+    */urls.py
+    */admin.py
+    */migrations/*
+    */tests/*
+```
+- Para rodar o teste use `coverage run manage.py test`
+- para relatório de testes `coverage report` ou `coverage html`
+- rodar o servidor interno do python `python -m http.server`
+
+**Excluir arquivo padrão de testes** e **criar pacote de testes**
+
+- criar diretório `tests` dentro da raiz do app
+- criar arquivo vazio `__init__.py`
+- criar arquivos
+  - `test_forms.py`
+  - `test_models.py`
+  - `test_views.py`
+
 ## Referências
 
 - [PostgreSQL download](https://www.enterprisedb.com/downloads/postgres-postgresql-downloads)
