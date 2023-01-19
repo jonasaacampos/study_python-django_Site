@@ -1,3 +1,49 @@
+### Cobertura de testes
+>Coverage report: **100%** xD
+<table class="index" data-sortable="">
+        <thead>
+            <tr class="tablehead" title="Click to sort">
+                <th class="name left" aria-sort="none" data-shortcut="n">Module</th>
+                <th aria-sort="none" data-default-sort-order="descending" data-shortcut="s">statements</th>
+                <th aria-sort="none" data-default-sort-order="descending" data-shortcut="m">missing</th>
+                <th aria-sort="none" data-default-sort-order="descending" data-shortcut="x">excluded</th>
+                <th class="right" aria-sort="none" data-shortcut="c">coverage</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="file">
+                <td class="name left"><a href="d_57760688d1f824db_forms_py.html">core\forms.py</a></td>
+                <td>15</td>
+                <td>0</td>
+                <td>0</td>
+                <td class="right" data-ratio="15 15">100%</td>
+            </tr>
+            <tr class="file">
+                <td class="name left"><a href="d_57760688d1f824db_models_py.html">core\models.py</a></td>
+                <td>54</td>
+                <td>0</td>
+                <td>0</td>
+                <td class="right" data-ratio="54 54">100%</td>
+            </tr>
+            <tr class="file">
+                <td class="name left"><a href="d_57760688d1f824db_views_py.html">core\views.py</a></td>
+                <td>24</td>
+                <td>0</td>
+                <td>0</td>
+                <td class="right" data-ratio="24 24">100%</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr class="total">
+                <td class="name left">Total</td>
+                <td>93</td>
+                <td>0</td>
+                <td>0</td>
+                <td class="right" data-ratio="93 93">100%</td>
+            </tr>
+        </tfoot>
+    </table>
+
 ### Configurando ambiente e criando projeto
 
 ```bash
